@@ -57,7 +57,15 @@ void draw_circle(int cx, int cy, int r) {
     int y = r;
     int d = 1 - r;
 
-    
+    while(x <= y) {
+        put_pixel(cx+x, cy+y);
+        put_pixel(cx-x, cy+y);
+        put_pixel(cx+x, cy-y);
+        put_pixel(cx-x, cy-y);
+        put_pixel(cx+y, cy+x);
+        put_pixel(cx-y, cy+x);
+        put_pixel(cx+y, cy-x);
+        put_pixel(cx-y, cy-x);
 
         if(d < 0)
             d += 2*x + 3;
