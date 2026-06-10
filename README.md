@@ -31,3 +31,11 @@ a. Canvas Initialization: The process begins by flushing the entire 80x24 charac
 clean slate for the drawing operations. This ensures that no remnants of previous renders interfere with the current output.
 b. Rasterization Pipeline: The program then iterates through the active obj array, passing each shape's parameters into its respective
 mathematical algorithm, such as Bresenham’s, which calculates the specific pixel coordinates to be colored with an asterisk on the canvas grid.
+
+6.Clear all objects
+a. Reset Counter: The total variable is set back to zero, which effectively removes all objects from the active render list without needing to delete them individually. This performs a hard reset of the system's current state.
+b. Canvas Flush: The render() function is called or the init_canvas() function is triggered to immediately clear the display, ensuring the user sees an empty grid, confirming the workspace is ready for new designs.
+
+7.Export/Save status
+a. Data Serialization: This function iterates through the obj array and writes the structure data (kind, coordinates, and radius) to a text file in a structured format. This ensures that the user's progress can be saved persistently beyond the lifecycle of the running program.
+b. Verification Output: The program displays a confirmation message indicating the number of objects saved and the destination file path. This provides the user with clear feedback that their current drawing session has been successfully archived for future reloading.
